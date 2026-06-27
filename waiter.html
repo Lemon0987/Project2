@@ -92,7 +92,7 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-dar
 
 <script>
 
-const FB_URL = 'https://moodmenu-a8d4f-default-rtdb.firebaseio.com/';
+const FB_URL = 'https://moodmenu-a8d4f-default-rtdb.firebaseio.com';
 async function dbRead(path){try{const r=await fetch(FB_URL+path+'.json');return await r.json()||{};}catch(e){return {};}}
 async function dbWrite(path,data){try{await fetch(FB_URL+path+'.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});}catch(e){}}
 async function dbPatch(path,data){try{await fetch(FB_URL+path+'.json',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});}catch(e){}}
